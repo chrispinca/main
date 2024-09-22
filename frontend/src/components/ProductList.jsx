@@ -22,6 +22,7 @@ function ProductList() {
 
     return (
         <div className="product-list-container">
+            <h2>Products</h2>
             <div className = "product-list">
                 {products.map(product => (
                     <ProductCard 
