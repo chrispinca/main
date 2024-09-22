@@ -166,14 +166,6 @@ footer p {
   }
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-  width: 100%; /* Ensure the product list spans full width */
-}
-
 .product-image {
   width: 100%; /* Set to full width of the card */
   height: auto; /* Maintain aspect ratio */
@@ -195,4 +187,27 @@ footer p {
 
 .nav-links h3:hover {
   text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/*Product List styling*/
+
+.product-list-container {
+  max-width: 100%; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 5%; /* Add padding */
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 0; /* Remove padding if needed */
+  gap: 16px; /* Space between items */
+}
+
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 100%; /* Full width on small screens */
+  }
 }
