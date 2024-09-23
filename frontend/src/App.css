@@ -205,6 +205,12 @@ footer p {
   gap: 16px; /* Space between items */
 }
 
+.product-list-title {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 
 @media (max-width: 768px) {
   .product-card {
@@ -213,7 +219,6 @@ footer p {
 }
 
 
-/*HERO STYLING*/
 /* HERO STYLING */
 .hero {
   position: relative;
@@ -225,18 +230,27 @@ footer p {
 }
 
 .hero-slide {
+  position: relative; /* Relative positioning for stacking */
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
 }
 
 .hero-image {
   width: 100%;
-  height: 100%; /* Full height of the hero */
-  object-fit: cover; /* Cover the area without distorting */
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* Stack images */
+  top: 0;
+  left: 0;
+  opacity: 0; /* Start with images hidden */
+  transition: opacity 1s ease-in-out; /* Fade transition */
 }
+
+.hero-image.active {
+  opacity: 1; /* Show the active image */
+}
+
+
 
 .hero-text {
   position: absolute;
@@ -257,6 +271,8 @@ footer p {
   padding: 10px;
   cursor: pointer;
 }
+
+
 
 .prev {
   left: 10px; /* Position the previous button */
