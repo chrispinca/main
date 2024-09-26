@@ -104,6 +104,21 @@ button:focus-visible {
   text-decoration: underline;
 }
 
+.nav-link {
+  color: #213547; /* Updated to match header text */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #213547; /* Updated to match header text */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /* Footer Styles */
 footer {
   background-color: #f8f9fa;
