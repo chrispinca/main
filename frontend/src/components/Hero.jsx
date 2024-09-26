@@ -13,7 +13,7 @@ function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
-        intervalId.current = setInterval(nextSlide, 6500);
+        intervalId.current = setInterval(nextSlide, 8000);
 
         return () => {
             clearInterval(intervalId.current);

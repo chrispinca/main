@@ -8,6 +8,7 @@ function Home() {
     return (
         <div>
             <Hero />
+            <h2 className = "product-list-title">Featured Products</h2>
             <ProductList />
             
         </div>

@@ -200,7 +200,7 @@ footer p {
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: center;
   padding: 0; /* Remove padding if needed */
   gap: 16px; /* Space between items */
 }
