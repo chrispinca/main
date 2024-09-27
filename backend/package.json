@@ -1,17 +1,21 @@
 {
-  "name": "store-app",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "A fullstack online store",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "npm run dev"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backend": "file:",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "pg": "^8.13.0",
-    "store-app": "file:"
+    "nodemon": "^3.1.7",
+    "pg": "^8.13.0"
   }
 }
