@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 
 function ProductCard(props) {
-    console.log("Product Image URL:", props.image); // Check image URL
     return (
         <div className="product-card">
             <Link to = {`/pages/ProductDetails/${props.id}`}>

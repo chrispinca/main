@@ -296,3 +296,8 @@ footer p {
 .next {
   right: 10px; /* Position the next button */
 }
+
+.product-details-image {
+  max-height: 30rem;
+  border-radius: 4px;
+}

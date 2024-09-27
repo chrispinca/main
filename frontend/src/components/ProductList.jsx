@@ -29,6 +29,7 @@ function ProductList() {
                         image = {product.image_url}
                         productName = {product.name}
                         price = {product.price}
+                        id = {product.id}
                     />
                 ))}
             </div>
