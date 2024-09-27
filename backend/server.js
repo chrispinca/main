@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { Pool } from 'postgres-pool';
+import productRoutes from './productRoutes.js';
 
 dotenv.config();
 
@@ -10,6 +11,8 @@ const PORT = process.env.PORT;
 
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
+
+app.use('/', productRoutes);
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
