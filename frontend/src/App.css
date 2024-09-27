@@ -1,0 +1,298 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack header, main, and footer */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Link Styles */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Button Styles */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white; /* Ensures text is readable */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.3s; /* Added transition for background */
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Light Mode Preferences */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    color: #000; /* Ensure text is readable */
+  }
+}
+
+/* Header Styles */
+.header {
+  background-color: #f8f9fa;
+  color: #213547;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Full width */
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.nav a {
+  color: #213547; /* Updated to match header text */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: #213547; /* Updated to match header text */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #213547; /* Updated to match header text */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Full width */
+  margin-top: auto; /* Sticks to bottom of page */
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #ffffff; /* Light background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  transition: box-shadow 0.3s, background-color 0.3s; /* Added transition for background */
+  max-width: 350px;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Slight change on hover */
+}
+
+.product-name {
+  font-size: 1.5rem;
+  margin: 12px 0;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 100%; /* Full width on small screens */
+  }
+}
+
+.product-image {
+  width: 100%; /* Set to full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px;
+  object-fit: cover; /* Ensure image covers the area nicely */
+}
+
+/*NAVBAR CSS*/
+.nav-links {
+  display: flex; /* Use flexbox to arrange items in a row */
+  justify-content: center; /* Center the items */
+  margin-top: 10px; /* Add some spacing above the nav links */
+}
+
+.nav-links h3 {
+  margin: 0 15px; /* Add horizontal spacing between links */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.nav-links h3:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/*Product List styling*/
+
+.product-list-container {
+  max-width: 100%; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 5%; /* Add padding */
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0; /* Remove padding if needed */
+  gap: 16px; /* Space between items */
+}
+
+.product-list-title {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 100%; /* Full width on small screens */
+  }
+}
+
+
+/* HERO STYLING */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 600px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content */
+}
+
+.hero-slide {
+  position: relative; /* Relative positioning for stacking */
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* Stack images */
+  top: 0;
+  left: 0;
+  opacity: 0; /* Start with images hidden */
+  transition: opacity 1s ease-in-out; /* Fade transition */
+}
+
+.hero-image.active {
+  opacity: 1; /* Show the active image */
+}
+
+
+
+.hero-text {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  bottom: 20px; /* Adjust for spacing */
+  left: 20px; /* Adjust for spacing */
+}
+
+.hero button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+.prev {
+  left: 10px; /* Position the previous button */
+}
+
+.next {
+  right: 10px; /* Position the next button */
+}
