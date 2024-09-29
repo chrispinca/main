@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { CartContext } from "../CartContext";
 
 function ProductDetails() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const navigate = useNavigate();
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         const fetchProductDetails = async () => {
@@ -25,16 +28,22 @@ function ProductDetails() {
         return <div>Loading...</div>
     }
 
+    const handleCartClick = () => {
+        addToCart(product);
+        navigate('/cart');
+    };
+
     return (
-        <div>
+        <div className = "product-details">
+            <h2>{product.name}</h2>
             <img 
                 className="product-details-image" 
                 src={"/" + product.image_url}
                 alt={`Image of ${product.name}`}
             />
-            <h2>{product.name}</h2>
             <h3>{`Price: $${product.price}`}</h3>
             <h3>{product.description}</h3>
+            <button className="add-to-cart" onClick={handleCartClick}>Add to Cart</button>
         </div>
     );
 }
