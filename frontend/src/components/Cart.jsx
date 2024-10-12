@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from '../CartContext';
+import CheckoutButton from "./CheckoutButton";
 
 function Cart() {
 
@@ -37,6 +38,7 @@ function Cart() {
                 )
             }
             <h1>Total: {total}</h1>
+            <CheckoutButton></CheckoutButton>
         </div>
     );
 }

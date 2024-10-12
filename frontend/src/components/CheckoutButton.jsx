@@ -5,11 +5,13 @@ function CheckoutButton() {
     const { cartItems } = useContext(CartContext);
 
     const handleCheckout = async () => {
+        console.log('Sending cart items:', JSON.stringify({ cartItems }, null, 2)); // Debug log
+
         try {
             const res = await fetch('http://localhost:5000/create-checkout-session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' }, // Corrected headers format
-                body: JSON.stringify({ cartItems }), // Body included within the fetch options
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cartItems }), // Ensure quantity is included
             });
 
             if (!res.ok) {
@@ -17,7 +19,7 @@ function CheckoutButton() {
             }
 
             const { url } = await res.json();
-            window.location.href = url; // Redirect to Stripe's checkout page
+            window.location.href = url; // Redirect to Stripe checkout page
         } catch (error) {
             console.error('Error during checkout:', error);
         }
