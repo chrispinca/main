@@ -9,7 +9,7 @@ function Header() {
             <nav>
                 <div className = "nav-links">
                     <Link to = {'/'} className = "nav-link"><h3>Home</h3></Link>
-                    <Link to = {'/pages/products'} className = "nav-link"><h3>Products</h3></Link>
+                    <Link to = {'/products'} className = "nav-link"><h3>Products</h3></Link>
                     <h3>Cart</h3>
                     <h3>About Us</h3>
                 </div>
