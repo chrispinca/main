@@ -1,6 +1,7 @@
 import express from 'express';
 import { Pool } from 'postgres-pool';
 import dotenv from 'dotenv';
+import Stripe from 'stripe';
 
 const router = express.Router();
 dotenv.config();
@@ -8,6 +9,8 @@ dotenv.config();
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
 });
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 
 //Route to get all products
@@ -104,6 +107,43 @@ router.put('/products/:id', async (req, res) => {
         res.status(500).json({error: 'Internal server error'});
     }
 });
+
+//route for a checkout
+router.post('/create-checkout-session', async (req, res) => {
+    const { cartItems } = req.body;
+
+    console.log('Received cart items:', cartItems); // Log the cart data
+
+    if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
+        return res.status(400).json({ error: 'Invalid cart items' });
+    }
+
+    try {
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: cartItems.map((item) => ({
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: item.name,
+                        images: item.image_url ? [item.image_url] : [],
+                    },
+                    unit_amount: Math.round(item.price * 100), // Price in cents
+                },
+                quantity: item.quantity || 1, 
+            })),
+            mode: 'payment',
+            success_url: 'http://localhost:3000/success',
+            cancel_url: 'http://localhost:3000/cancel',
+        });
+
+        res.json({ url: session.url });
+    } catch (error) {
+        console.error('Error creating checkout session:', error); // Log full error
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 
 export default router;
