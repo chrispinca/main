@@ -20,11 +20,11 @@ function Cart() {
                 <ul>
                     {cartItems.map((item) => (
                         
-                        <li key={item.id}>
-                            <img src={"/" + item.image_url} alt = {item.name}/>
+                        <li className = "class-item" key={item.id}>
+                            <img className = "cart-image" src={"/" + item.image_url} alt = {item.name}/>
                             <span>{item.name}</span>
-                            <span>{item.price}</span>
-                            <h2>{total}</h2>
+                            <span>${item.price}</span>
+                            <span>{}</span>
                             <button onClick ={() => removeFromCart(item.id)}>Remove</button>
                         </li>
                     ))}
